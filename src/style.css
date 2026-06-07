@@ -1,0 +1,395 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Properties & detail pages */
+.section {
+  padding: 2rem 0 3rem;
+}
+
+.crumbs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgb(100 116 139);
+  font-size: 13px;
+  padding: 6px 0 12px;
+}
+
+.crumbLink {
+  text-decoration: none;
+  color: rgb(100 116 139);
+}
+
+.crumbLink:hover {
+  color: #1a2f4b;
+}
+
+.crumbSep {
+  opacity: 0.4;
+}
+
+.crumbHere {
+  color: rgb(30 41 59);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pageTitle {
+  margin: 0;
+  font-size: 34px;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  font-weight: 700;
+  color: rgb(15 23 42);
+}
+
+.propsLayout {
+  display: grid;
+  grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+@media (max-width: 980px) {
+  .propsLayout {
+    grid-template-columns: 1fr;
+  }
+  .pageTitle {
+    font-size: 28px;
+  }
+}
+
+.filterCard {
+  background: white;
+  border: 1px solid rgb(226 232 240);
+  border-radius: 16px;
+  padding: 16px;
+  position: sticky;
+  top: 88px;
+  box-shadow: 0 4px 20px rgb(0 0 0 / 0.04);
+}
+
+@media (max-width: 980px) {
+  .filterCard {
+    position: relative;
+    top: auto;
+  }
+}
+
+.filterHead {
+  font-weight: 650;
+  color: rgb(15 23 42);
+  padding: 4px 4px 12px;
+}
+
+.filterGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.filterField {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.filterSpan2 {
+  grid-column: span 2;
+}
+
+.filterLabel {
+  font-size: 12px;
+  color: rgb(100 116 139);
+}
+
+.fieldControl {
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgb(226 232 240);
+  background: rgb(248 250 252);
+  padding: 0 12px;
+  width: 100%;
+  font-size: 13px;
+  color: rgb(30 41 59);
+}
+
+.priceRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.filterBtns {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.searchBtn {
+  height: 44px;
+  border-radius: 10px;
+  border: none;
+  background: #1a2f4b;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.searchBtn:hover {
+  background: #15263d;
+}
+
+.ctaGhost {
+  text-decoration: none;
+  font-size: 13px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgb(226 232 240);
+  background: white;
+  color: rgb(51 65 85);
+  text-align: center;
+  cursor: pointer;
+}
+
+.resultsCard {
+  background: white;
+  border: 1px solid rgb(226 232 240);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 20px rgb(0 0 0 / 0.04);
+}
+
+.resultsHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 6px 4px 12px;
+  border-bottom: 1px solid rgb(241 245 249);
+  margin-bottom: 12px;
+}
+
+.resultsTitle {
+  font-weight: 650;
+  color: rgb(15 23 42);
+}
+
+.resultsCount {
+  color: rgb(100 116 139);
+  font-size: 12px;
+}
+
+.propGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 14px;
+}
+
+.propRow {
+  background: white;
+  border: 1px solid rgb(226 232 240);
+  border-radius: 14px;
+  padding: 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.propRowTop {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.propType {
+  font-size: 12px;
+  color: rgb(100 116 139);
+}
+
+.propTitle {
+  font-weight: 600;
+  color: rgb(15 23 42);
+  line-height: 1.25;
+}
+
+.propLoc {
+  color: rgb(100 116 139);
+  font-size: 13px;
+}
+
+.propBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.propPrice {
+  font-weight: 650;
+  color: #1a2f4b;
+}
+
+.badge {
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid;
+}
+
+.badge--rent {
+  background: rgb(224 242 254);
+  color: rgb(3 105 161);
+  border-color: rgb(186 230 253);
+}
+.badge--sale {
+  background: rgb(241 245 249);
+  color: #1a2f4b;
+  border-color: rgb(203 213 225);
+}
+.badge--pg {
+  background: rgb(245 243 255);
+  color: rgb(109 40 217);
+  border-color: rgb(221 214 254);
+}
+.badge--lease {
+  background: rgb(248 250 252);
+  color: rgb(71 85 105);
+  border-color: rgb(226 232 240);
+}
+
+.chip {
+  display: inline-flex;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid rgb(226 232 240);
+  background: rgb(248 250 252);
+  font-size: 12px;
+  color: rgb(71 85 105);
+}
+
+.listingMeta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btnSmall {
+  text-decoration: none;
+  font-size: 12px;
+  padding: 9px 12px;
+  border-radius: 10px;
+  background: #1a2f4b;
+  color: white;
+  font-weight: 600;
+}
+
+.detailCard {
+  background: white;
+  border: 1px solid rgb(226 232 240);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgb(0 0 0 / 0.04);
+}
+
+.detailTop {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgb(241 245 249);
+}
+
+@media (max-width: 980px) {
+  .detailTop {
+    grid-template-columns: 1fr;
+  }
+}
+
+.detailActions {
+  display: grid;
+  justify-items: end;
+  gap: 10px;
+}
+
+.detailPrice {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a2f4b;
+}
+
+.metaGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding-top: 14px;
+}
+
+@media (max-width: 980px) {
+  .metaGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.metaItem {
+  background: rgb(248 250 252);
+  border: 1px solid rgb(226 232 240);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.metaK {
+  font-size: 12px;
+  color: rgb(100 116 139);
+}
+
+.metaV {
+  margin-top: 6px;
+  font-weight: 600;
+  color: rgb(15 23 42);
+}
+
+.detailBottom {
+  padding-top: 14px;
+}
+
+.ctaPrimary {
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: #1a2f4b;
+  color: white;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.sectionSub {
+  color: rgb(100 116 139);
+}
+
+@media (max-width: 520px) {
+  .filterGrid {
+    grid-template-columns: 1fr;
+  }
+  .filterSpan2 {
+    grid-column: auto;
+  }
+  .metaGrid {
+    grid-template-columns: 1fr;
+  }
+}
