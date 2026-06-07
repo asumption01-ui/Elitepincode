@@ -1,4 +1,5 @@
 import { PROPERTIES } from './properties'
+import { assetUrl } from '../utils/assets'
 
 export type BengaluruRegion = {
   id: string
@@ -15,7 +16,7 @@ const REGION_DEFS = [
     id: 'north',
     name: 'North Bengaluru',
     icon: '↑',
-    image: '/images/north-bengaluru.png',
+    image: assetUrl('/images/north-bengaluru.png'),
     gradient: 'from-emerald-600/80 via-teal-700/70 to-slate-900/90',
     locations: [
       'Hebbal',
@@ -32,7 +33,7 @@ const REGION_DEFS = [
     id: 'south',
     name: 'South Bengaluru',
     icon: '↓',
-    image: '/images/south-bengaluru.png',
+    image: assetUrl('/images/south-bengaluru.png'),
     gradient: 'from-amber-500/80 via-orange-600/70 to-slate-900/90',
     locations: [
       'Jayanagar',
@@ -49,7 +50,7 @@ const REGION_DEFS = [
     id: 'east',
     name: 'East Bengaluru',
     icon: '→',
-    image: '/images/east-bengaluru.png',
+    image: assetUrl('/images/east-bengaluru.png'),
     gradient: 'from-blue-500/80 via-indigo-600/70 to-slate-900/90',
     locations: [
       'Whitefield',
@@ -66,7 +67,7 @@ const REGION_DEFS = [
     id: 'west',
     name: 'West Bengaluru',
     icon: '←',
-    image: '/images/west-bengaluru.png',
+    image: assetUrl('/images/west-bengaluru.png'),
     gradient: 'from-violet-500/80 via-purple-600/70 to-slate-900/90',
     locations: [
       'Rajajinagar',

@@ -2,6 +2,12 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { CONTACT, FOOTER_CATEGORIES, FOOTER_REGIONS, whatsappLink } from '../data/site'
+import { assetUrl, homeHash } from '../utils/assets'
+
+function resolveHref(href: string) {
+  if (href.startsWith('/#')) return homeHash(href.slice(2))
+  return href
+}
 
 const QUICK_LINKS = [
   { label: 'About Us', href: '/about' },
@@ -138,7 +144,7 @@ export function SiteFooter() {
         <div className="mt-14 grid gap-10 border-t border-slate-200 pt-14 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3">
-              <img className="h-9 w-9" src="/logo.svg" alt="" width={36} height={36} />
+              <img className="h-9 w-9" src={assetUrl('/logo.svg')} alt="" width={36} height={36} />
               <div>
                 <div className="text-lg font-semibold text-slate-900">Elite Pincode</div>
                 <div className="text-xs text-slate-500">Bengaluru&apos;s Premium Property Partner</div>
@@ -194,7 +200,7 @@ export function SiteFooter() {
             <ul className="space-y-2">
               {FOOTER_REGIONS.map((r) => (
                 <li key={r}>
-                  <a href="/#regions" className="text-sm text-slate-500 transition hover:text-[#1a2f4b]">
+                  <a href={homeHash('regions')} className="text-sm text-slate-500 transition hover:text-[#1a2f4b]">
                     {r}
                   </a>
                 </li>
@@ -212,7 +218,7 @@ export function SiteFooter() {
                       {l.label}
                     </Link>
                   ) : (
-                    <a href={l.href} className="text-sm text-slate-500 transition hover:text-[#1a2f4b]">
+                    <a href={resolveHref(l.href)} className="text-sm text-slate-500 transition hover:text-[#1a2f4b]">
                       {l.label}
                     </a>
                   )}

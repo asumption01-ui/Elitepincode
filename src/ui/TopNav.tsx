@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
+import { assetUrl, homeHash } from '../utils/assets'
 
 type NavItem = {
   label: string
@@ -45,7 +46,7 @@ export function TopNav() {
     <div className="mx-auto max-w-7xl px-6 py-4">
       <div className="flex items-center justify-between gap-6">
         <Link to="/" className="flex shrink-0 items-center gap-2.5" aria-label="Elite Pincode home">
-          <img className="h-9 w-9" src="/logo.svg" alt="" width={36} height={36} />
+          <img className="h-9 w-9" src={assetUrl('/logo.svg')} alt="" width={36} height={36} />
           <span className="text-lg font-semibold tracking-tight text-slate-800">Elite Pincode</span>
         </Link>
 
@@ -54,7 +55,7 @@ export function TopNav() {
             l.hash ? (
               <a
                 key={l.label}
-                href={`${l.to}#${l.hash}`}
+                href={homeHash(l.hash)}
                 className={linkClass(pathname === l.to && hash === `#${l.hash}`)}
               >
                 {l.label}
@@ -72,7 +73,7 @@ export function TopNav() {
         </nav>
 
         <a
-          href="/#contact"
+          href={homeHash('contact')}
           className="hidden rounded-lg bg-[#1a2f4b] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#15263d] lg:inline-block"
         >
           Login / Sign Up
@@ -94,7 +95,7 @@ export function TopNav() {
             l.hash ? (
               <a
                 key={l.label}
-                href={`${l.to}#${l.hash}`}
+                href={homeHash(l.hash)}
                 className="rounded-lg px-2 py-2.5 text-sm font-medium text-slate-600"
                 onClick={() => setOpen(false)}
               >
@@ -112,7 +113,7 @@ export function TopNav() {
             ),
           )}
           <a
-            href="/#contact"
+            href={homeHash('contact')}
             className="mt-2 rounded-lg bg-[#1a2f4b] py-2.5 text-center text-sm font-medium text-white"
             onClick={() => setOpen(false)}
           >
